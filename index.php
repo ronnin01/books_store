@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./static/css/style.css">
     <!-- css link -->
 
+    <link rel="shortcut icon" type="image/png" href="./static/img/logo.png" />
+
     <title>Book Sale</title>
 </head>
 <body>
