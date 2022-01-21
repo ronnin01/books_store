@@ -71,7 +71,19 @@
     <!-- Top books purchase -->
     <div class="top-books-container">
         <div class="top-books">
-
+            <div class="book-carousel">
+                <img src="./static/img/image1.jpg" alt="" style="width: 200px;">
+            </div>
+            <div class="book-carousel">
+                <img src="./static/img/image2.jpg" alt="" style="width: 200px;">
+            </div>
+            <div class="book-carousel">
+                <img src="./static/img/image3.jpg" alt="" style="width: 200px;">
+            </div>
+            <div class="carousel-actions">
+                <button id="prev-slide" aria-label="previous slide"><</button>
+                <button id="next-slide" aria-label="next slide">></button>
+            </div>
         </div>
     </div>
     <!-- Top books purchase -->

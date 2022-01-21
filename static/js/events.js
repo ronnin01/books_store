@@ -13,3 +13,5 @@ function nav_slide_menu_bar(){
 //Functions run
 
 nav_slide_menu_bar();
+
+//carousel animation
