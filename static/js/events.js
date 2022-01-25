@@ -15,3 +15,4 @@ function nav_slide_menu_bar(){
 nav_slide_menu_bar();
 
 //carousel animation
+

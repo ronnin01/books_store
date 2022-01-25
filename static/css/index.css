@@ -130,6 +130,33 @@ body{
     font-size: 15px;
 }
 
+.top-books{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #8A584C;
+}
+.books{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-books .books .book1 img{
+    width: 200px;
+    height: 300px;
+}
+.top-books .books .book2 img{
+    width: 200px;
+    height: 300px;
+}
+.top-books .books .book3 img{
+    width: 200px;
+    height: 300px;
+}
+
+
 
 /* media queriessss! */
 @media (max-width: 1110px){
@@ -148,6 +175,9 @@ body{
     }
     .genre{
         width: 100%;
+    }
+    .books{
+        width: 90%;
     }
 }
 
@@ -174,6 +204,22 @@ body{
         display: grid;
         grid-template-columns: auto auto auto;
         grid-gap: 10px;
+    }
+
+    .books{
+        flex-direction: column;
+    }
+    .top-books .books .book1 img{
+        width: 300px;
+        height: 400px;
+    }
+    .top-books .books .book2 img{
+        width: 300px;
+        height: 400px;
+    }
+    .top-books .books .book3 img{
+        width: 300px;
+        height: 400px;
     }
 }
 

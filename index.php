@@ -10,7 +10,7 @@
     <!-- Bootstrap and Fontawesome cdn-->
 
     <!-- css link -->
-    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/index.css">
     <!-- css link -->
 
     <link rel="shortcut icon" type="image/png" href="./static/img/logo.png" />
@@ -69,28 +69,84 @@
     <!-- Book Genre -->
 
     <!-- Top books purchase -->
-    <div class="top-books-container">
-        <div class="top-books">
-            <div class="book-carousel">
-                <img src="./static/img/image1.jpg" alt="" style="width: 200px;">
+    <div class="top-books">
+        <div class="books">
+            <div class="book1">
+                <img src="./static/img/image1.png" alt="">
             </div>
-            <div class="book-carousel">
-                <img src="./static/img/image2.jpg" alt="" style="width: 200px;">
+            <div class="book2">
+                <img src="./static/img/image1.png" alt="">
             </div>
-            <div class="book-carousel">
-                <img src="./static/img/image3.jpg" alt="" style="width: 200px;">
-            </div>
-            <div class="carousel-actions">
-                <button id="prev-slide" aria-label="previous slide"><</button>
-                <button id="next-slide" aria-label="next slide">></button>
+            <div class="book3">
+                <img src="./static/img/image1.png" alt="">
             </div>
         </div>
     </div>
     <!-- Top books purchase -->
 
+    <!-- Books Sale -->
+    <div class="books-container">
+        <div class="books-sale-text">
+            <h3>Best books to by</h3>
+            <p>We got all you want to read in here</p>
+        </div>
+
+        <div class="books-products-container">
+        <!-- php syntax -->
+            <?php
+                include_once('./config/db_connection.php');
+
+                $SQL_GET_BOOKS = 'SELECT * FROM Books WHERE ?';
+                
+                $stmt = $pdo->prepare($SQL_GET_BOOKS);
+
+                $stmt->execute([1]);
+                
+                while($row = $stmt->fetch()){
+                    echo '
+
+                        <div class="books-products">
+                            '.$row['b_name'].'
+                        </div>
+                    
+                    ';
+                }
+
+            ?>
+            <!-- php syntax -->
+        </div>
+    </div>
+    <!-- Books Sale -->
+
     <!-- static java script link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./static/js/events.js"></script>
     <!-- static java script link -->
+
+    <style>
+        .books-container{
+            margin-top: 50px;
+            width: 100%;
+            height: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .books-sale-text{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .books-products-container{
+            position: relative;
+            display: grid;
+            margin-top: 30px;
+            grid-template-columns: auto auto auto;
+            grid-gap: 1fr;
+        }
+    </style>
 </body>
 </html>
