@@ -1,9 +1,9 @@
 <?php
 
-    $HOST = 'localhost';
-    $USER = 'root';
-    $PASSWORD = '';
-    $DATABASE = 'db_books';
+    $HOST = 'db4free.net';
+    $USER = 'aaron_db';
+    $PASSWORD = 'Nakamaliw1';
+    $DATABASE = 'db_books_store';
 
     $dns = "mysql:host=$HOST;dbname=$DATABASE";
 

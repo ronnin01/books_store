@@ -1,0 +1,83 @@
+/* 
+    google fonts import links
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Satisfy&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+.login-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    background-color: #8FA6AC;
+}
+.text-login{
+    margin: 100px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.text-login h1{
+    letter-spacing: 15px;
+    font-family: 'Satisfy', sans-serif;
+}
+.input-user input{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    margin: 40px 0;
+    width: 300px;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.input-pass input{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    margin: 40px 0;
+    width: 300px;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.input-user input::placeholder{
+    color: white;
+}
+.input-pass input::placeholder{
+    color: white;
+}
+
+.btn-login input{
+    width: 300px;
+    margin: 30px 0;
+    background-color: #8A584C;
+    padding: 10px 0;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    color: white;
+}
+.btn-login input:hover{
+    box-shadow: 0px 2px 8px 0 black;
+    cursor: pointer;
+}
+.forgot-password-container{
+    color: black;
+    margin-top: 20px;
+    color: black;
+}
