@@ -4,6 +4,7 @@
 
     }
 
+    //this function is to add products to cart.
     function add_cart(){
         include('./config/db_connection.php');
 
@@ -13,18 +14,24 @@
 
         if(isset($_POST['cart-btn'])){
 
-            $SQL_PRICE = "SELECT b_price FROM Books WHERE b_id = ?";
-            $stmt = $pdo->prepare($SQL_PRICE);
-            $stmt->execute([$book_id]);
-            $row = $stmt->fetch();
-            
-            $total_price = $quantity * $row['b_price'];
+            if(isset($_COOKIE['customer_id']) && $_COOKIE['username']){
+                $SQL_PRICE = "SELECT b_price FROM Books WHERE b_id = ?";
+                $stmt = $pdo->prepare($SQL_PRICE);
+                $stmt->execute([$book_id]);
+                $row = $stmt->fetch();
+                
+                $total_price = $quantity * $row['b_price'];
 
-            $SQL_ADD_CART = "INSERT INTO Cart(c_id, quantity, b_id, total_price) VALUES(?,?,?,?)";
+                $SQL_ADD_CART = "INSERT INTO Cart(c_id, quantity, b_id, total_price) VALUES(?,?,?,?)";
 
-            $stmt = $pdo->prepare($SQL_ADD_CART);
+                $stmt = $pdo->prepare($SQL_ADD_CART);
 
-            $stmt->execute([$customer_id, $quantity, $book_id, $total_price]);
+                $stmt->execute([$customer_id, $quantity, $book_id, $total_price]);
+            }else{
+                echo '
+                    <script>alert("You need to log in first before adding products to cart.")</script>
+                ';
+            }
         }
     }
 
